@@ -1,11 +1,15 @@
-
-import './App.css';
-import Home from "./components/Home"
+import "./App.css";
+import Inicio from "./components/Inicio";
 function App() {
   return (
-    <div class="container-principal">
-      <Home />
-    </div>
+    <>
+      <div className="container-titulo">
+        <h1 className="titulo">Quizz de Gustavo Finger ◕‿◕ </h1>
+      </div>
+      <div className="container-principal">
+        <Inicio />
+      </div>
+    </>
   );
 }
 
