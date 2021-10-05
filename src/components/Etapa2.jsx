@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./home.css";
 import {
   FormControlLabel,
@@ -13,7 +13,7 @@ function Etapa2({ aoEnviar }) {
     <FormControl component="fieldset">
       <h3>Qual é o time que eu torço ??</h3>
 
-      <RadioGroup aria-label="gender" name="radio-buttons-group">
+      <RadioGroup aria-label="gender" name="radio-buttons-group ">
         <FormControlLabel
           value="1"
           control={

@@ -9,16 +9,12 @@ import {
 
 function Etapa6({ aoEnviar }) {
   const [resposta, setResposta] = useState("");
-  
+
   return (
     <FormControl component="fieldset">
       <h3>Qual é meu jogo preferido ??</h3>
 
-      <RadioGroup
-        aria-label="gender"
-        defaultValue="female"
-        name="radio-buttons-group"
-      >
+      <RadioGroup aria-label="gender" name="radio-buttons-group">
         <FormControlLabel
           value="1"
           control={

@@ -3,8 +3,9 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .container{
@@ -16,5 +17,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     
 }

@@ -12,12 +12,14 @@ import Etapa7 from "./Etapa7";
 import Etapa8 from "./Etapa8";
 import Etapa9 from "./Etapa9";
 import Etapa10 from "./Etapa10";
-import Finalizacao from "./Finalizacao";
 
-function Inicio(aoEnviar) {
+
+function Inicio() {
   const [etapaAtual, setEtapaAtual] = useState(0);
 
   const [dadosColetados, setDados] = useState(0);
+
+  const [contadorRespostas, setContador] = useState(0);
   const etapas = [
     <Inicial />,
     <Etapa1 aoEnviar={coletar} />,
@@ -30,12 +32,12 @@ function Inicio(aoEnviar) {
     <Etapa8 aoEnviar={coletar} />,
     <Etapa9 aoEnviar={coletar} />,
     <Etapa10 aoEnviar={coletar} />,
-    <Finalizacao />,
   ];
 
   function coletar(resposta) {
     setDados(resposta);
   }
+
 
   const respostas = [0, 3, 2, 1, 5, 2, 1, 1, 1, 2, 3];
 
@@ -46,15 +48,15 @@ function Inicio(aoEnviar) {
         {etapaAtual < 11 && (
           <Button
             onClick={() => {
-              if (
-                etapaAtual > 0 &&
-                etapaAtual < 11 &&
-                dadosColetados == respostas[etapaAtual]
-              ) {
+              if (etapaAtual > 0 && etapaAtual < 11) {
                 setEtapaAtual(etapaAtual + 1);
               }
               if (etapaAtual === 0) {
                 setEtapaAtual(etapaAtual + 1);
+              }
+              if (dadosColetados == respostas[etapaAtual]) {
+                setContador(contadorRespostas + 1);
+                console.log(contadorRespostas)
               }
             }}
             variant="outlined"
@@ -64,19 +66,22 @@ function Inicio(aoEnviar) {
             Próximo
           </Button>
         )}
-        {etapaAtual === 11 &&(
-          <Button
-          onClick={() => {
-            setEtapaAtual(0)
-          }}
-          variant="outlined"
-          color="secondary"
-          className="botao-proximo"
-        >
-          Reiniciar
-        </Button>
+        {etapaAtual === 11 && (
+          <div className="finalizacao">
+            <h1> Parabéns, você acertou {contadorRespostas - 1} perguntas !!</h1>
+            <Button
+              onClick={() => {
+                setEtapaAtual(0);
+                setContador(1)
+              }}
+              variant="outlined"
+              color="secondary"
+              className="botao-proximo"
+            >
+              Reiniciar
+            </Button>
+          </div>
         )}
-        
       </div>
     </Container>
   );
