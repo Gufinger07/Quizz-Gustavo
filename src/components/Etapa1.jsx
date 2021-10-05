@@ -79,7 +79,8 @@ function Etapa1({ aoEnviar }) {
             />
           }
           label="Stranger Things"
-        />
+        /> 
+        
       </RadioGroup>
     </FormControl>
   );
