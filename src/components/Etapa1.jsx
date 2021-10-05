@@ -18,7 +18,7 @@ function Etapa1({ aoEnviar }) {
         <FormControlLabel
           value="1"
           control={
-            <Radio
+            <Radio 
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);

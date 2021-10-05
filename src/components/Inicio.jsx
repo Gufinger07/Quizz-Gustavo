@@ -68,7 +68,7 @@ function Inicio() {
         )}
         {etapaAtual === 11 && (
           <div className="finalizacao">
-            <h1> Parabéns, você acertou {contadorRespostas - 1} perguntas !!</h1>
+            <h1> Parabéns, você acertou {contadorRespostas - 1} perguntas XD !!</h1>
             <Button
               onClick={() => {
                 setEtapaAtual(0);
