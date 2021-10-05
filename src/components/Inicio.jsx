@@ -12,43 +12,71 @@ import Etapa7 from "./Etapa7";
 import Etapa8 from "./Etapa8";
 import Etapa9 from "./Etapa9";
 import Etapa10 from "./Etapa10";
+import Finalizacao from "./Finalizacao";
 
-function Inicio() {
+function Inicio(aoEnviar) {
   const [etapaAtual, setEtapaAtual] = useState(0);
 
- 
-
+  const [dadosColetados, setDados] = useState(0);
   const etapas = [
     <Inicial />,
-    <Etapa1 />,
-    <Etapa2 />,
-    <Etapa3 />,
-    <Etapa4 />,
-    <Etapa5 />,
-    <Etapa6 />,
-    <Etapa7 />,
-    <Etapa8 />,
-    <Etapa9 />,
-    <Etapa10 />,
+    <Etapa1 aoEnviar={coletar} />,
+    <Etapa2 aoEnviar={coletar} />,
+    <Etapa3 aoEnviar={coletar} />,
+    <Etapa4 aoEnviar={coletar} />,
+    <Etapa5 aoEnviar={coletar} />,
+    <Etapa6 aoEnviar={coletar} />,
+    <Etapa7 aoEnviar={coletar} />,
+    <Etapa8 aoEnviar={coletar} />,
+    <Etapa9 aoEnviar={coletar} />,
+    <Etapa10 aoEnviar={coletar} />,
+    <Finalizacao />,
   ];
 
+  function coletar(resposta) {
+    setDados(resposta);
+  }
+
+  const respostas = [0, 3, 2, 1, 5, 2, 1, 1, 1, 2, 3];
 
   return (
     <Container fixed className="container" maxWidth="sm">
       {etapas[etapaAtual]}
       <div className="grupo-botoes">
-        <Button
+        {etapaAtual < 11 && (
+          <Button
+            onClick={() => {
+              if (
+                etapaAtual > 0 &&
+                etapaAtual < 11 &&
+                dadosColetados == respostas[etapaAtual]
+              ) {
+                setEtapaAtual(etapaAtual + 1);
+              }
+              if (etapaAtual === 0) {
+                setEtapaAtual(etapaAtual + 1);
+              }
+            }}
+            variant="outlined"
+            color="secondary"
+            className="botao-proximo"
+          >
+            Próximo
+          </Button>
+        )}
+        {etapaAtual === 11 &&(
+          <Button
           onClick={() => {
-            if (etapaAtual < 10) {
-              setEtapaAtual(etapaAtual + 1);
-            }
+            setEtapaAtual(0)
           }}
           variant="outlined"
           color="secondary"
           className="botao-proximo"
         >
-          Próximo
+          Reiniciar
         </Button>
+        )}
+        
       </div>
     </Container>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./home.css";
 import {
   FormControlLabel,
@@ -7,7 +7,9 @@ import {
   Radio,
 } from "@material-ui/core";
 
-function Etapa9() {
+function Etapa9({aoEnviar}) {
+
+  const [resposta, setResposta] = useState("")
   return (
     <FormControl component="fieldset">
       <h3>Qual é o meu personagem Preferido ??</h3>
@@ -15,27 +17,42 @@ function Etapa9() {
       <RadioGroup aria-label="gender" name="radio-buttons-group">
         <FormControlLabel
           value="1"
-          control={<Radio color="secondary" />}
+          control={<Radio color="secondary" onClick={(event) => {
+            setResposta(event.target.value)
+            aoEnviar(event.target.value)
+          }}/>}
           label="Homem de Ferro"
         />
         <FormControlLabel
           value="2"
-          control={<Radio color="secondary" />}
+          control={<Radio color="secondary" onClick={(event) => {
+            setResposta(event.target.value)
+            aoEnviar(event.target.value)
+          }}/>}
           label="Homem Aranha"
         />
         <FormControlLabel
           value="3"
-          control={<Radio color="secondary" />}
+          control={<Radio color="secondary" onClick={(event) => {
+            setResposta(event.target.value)
+            aoEnviar(event.target.value)
+          }}/>}
           label="Thor"
         />
         <FormControlLabel
           value="4"
-          control={<Radio color="secondary" />}
+          control={<Radio color="secondary" onClick={(event) => {
+            setResposta(event.target.value)
+            aoEnviar(event.target.value)
+          }}/>}
           label="Thanos"
         />
         <FormControlLabel
           value="5"
-          control={<Radio color="secondary" />}
+          control={<Radio color="secondary" onClick={(event) => {
+            setResposta(event.target.value)
+            aoEnviar(event.target.value)
+          }}/>}
           label="Batman"
         />
       </RadioGroup>
