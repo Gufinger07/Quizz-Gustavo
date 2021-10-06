@@ -54,7 +54,7 @@ function Inicio() {
               if (etapaAtual === 0) {
                 setEtapaAtual(etapaAtual + 1);
               }
-              if (dadosColetados == respostas[etapaAtual]) {
+              if (dadosColetados === respostas[etapaAtual]) {
                 setContador(contadorRespostas + 1);
                 console.log(contadorRespostas)
               }

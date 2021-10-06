@@ -48,7 +48,7 @@ function Etapa1({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                aoEnviar(parseInt(event.target.value));
               }}
             />
           }
