@@ -7,8 +7,10 @@ import {
   Radio,
 } from "@material-ui/core";
 
-function Etapa2({ aoEnviar }) {
+function Etapa2({ aoEnviar, verificar }) {
   var [resposta, setResposta] = useState("");
+
+  const [isCheched, setChecked] = useState(false);
   return (
     <FormControl component="fieldset">
       <h3>Qual é o time que eu torço ??</h3>
@@ -21,8 +23,10 @@ function Etapa2({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -35,8 +39,10 @@ function Etapa2({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -49,8 +55,10 @@ function Etapa2({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -63,8 +71,10 @@ function Etapa2({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -77,8 +87,10 @@ function Etapa2({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }

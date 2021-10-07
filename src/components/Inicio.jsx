@@ -18,27 +18,34 @@ function Inicio() {
 
   const [dadosColetados, setDados] = useState(0);
 
+  const [booleanColetado, setBoolean] = useState(true)
+
   const [contadorRespostas, setContador] = useState(0);
   const etapas = [
     <Inicial />,
-    <Etapa1 aoEnviar={coletar} />,
-    <Etapa2 aoEnviar={coletar} />,
-    <Etapa3 aoEnviar={coletar} />,
-    <Etapa4 aoEnviar={coletar} />,
-    <Etapa5 aoEnviar={coletar} />,
-    <Etapa6 aoEnviar={coletar} />,
-    <Etapa7 aoEnviar={coletar} />,
-    <Etapa8 aoEnviar={coletar} />,
-    <Etapa9 aoEnviar={coletar} />,
-    <Etapa10 aoEnviar={coletar} />,
+    <Etapa1 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa2 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa3 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa4 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa5 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa6 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa7 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa8 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa9 aoEnviar={coletar}  verificar={verifica}/>,
+    <Etapa10 aoEnviar={coletar} verificar={verifica}/>,
   ];
 
   function coletar(resposta) {
     setDados(resposta);
   }
 
+  function verifica(boolean) {
+    setBoolean(boolean)
+  }
+
   const respostas = [0, 3, 2, 1, 5, 2, 1, 1, 1, 2, 3];
 
+  
   return (
     <Container fixed className="container" maxWidth="sm">
       {etapas[etapaAtual]}
@@ -46,15 +53,24 @@ function Inicio() {
         {etapaAtual < 11 && (
           <Button
             onClick={() => {
-              if (etapaAtual > 0 && etapaAtual < 11) {
+              if (etapaAtual > 0 && etapaAtual < 11 && booleanColetado === !true) {
                 setEtapaAtual(etapaAtual + 1);
+                setBoolean(true)
+                
+              }
+              if (etapaAtual > 0 && etapaAtual < 11 && booleanColetado === !true && dadosColetados === respostas[etapaAtual]) {
+                setEtapaAtual(etapaAtual + 1);
+                setBoolean(true)
+                setContador(contadorRespostas + 1);
+                
+              
               }
               if (etapaAtual === 0) {
                 setEtapaAtual(etapaAtual + 1);
               }
-              if (dadosColetados === respostas[etapaAtual]) {
-                setContador(contadorRespostas + 1);
-              }
+              
+                
+              
             }}
             variant="outlined"
             color="secondary"
@@ -67,7 +83,7 @@ function Inicio() {
           <div className="finalizacao">
             <h1>
               {" "}
-              Parabéns, você acertou {contadorRespostas - 1}/ 10 perguntas XD !!
+              Parabéns, você acertou {contadorRespostas} / 10 perguntas XD !!
             </h1>
             <Button
               onClick={() => {
@@ -83,7 +99,7 @@ function Inicio() {
           </div>
         )}
       </div>
-      
+
     </Container>
   );
 }

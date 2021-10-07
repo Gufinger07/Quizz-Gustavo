@@ -7,8 +7,10 @@ import {
   Radio,
 } from "@material-ui/core";
 
-function Etapa1({ aoEnviar }) {
+function Etapa1({ aoEnviar, verificar }) {
   var [resposta, setResposta] = useState("");
+
+  const [isCheched, setChecked] = useState(false);
 
   return (
     <FormControl component="fieldset">
@@ -18,12 +20,16 @@ function Etapa1({ aoEnviar }) {
         <FormControlLabel
           value="1"
           control={
-            <Radio 
+            <Radio
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+
+                setChecked(false);
+                verificar(isCheched);
+                console.log(isCheched)
               }}
             />
           }
@@ -36,8 +42,11 @@ function Etapa1({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
+                console.log(isCheched)
               }}
             />
           }
@@ -50,8 +59,11 @@ function Etapa1({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
+                console.log(isCheched)
               }}
             />
           }
@@ -64,8 +76,11 @@ function Etapa1({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
+                console.log(isCheched)
               }}
             />
           }
@@ -78,14 +93,16 @@ function Etapa1({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                resposta = event.target.value
+                resposta = event.target.value;
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
+                console.log(isCheched)
               }}
             />
           }
           label="Stranger Things"
-        /> 
-        
+        />
       </RadioGroup>
     </FormControl>
   );

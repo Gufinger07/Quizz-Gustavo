@@ -7,8 +7,9 @@ import {
   Radio,
 } from "@material-ui/core";
 
-function Etapa10({ aoEnviar }) {
+function Etapa10({ aoEnviar, verificar }) {
   var [resposta, setResposta] = useState("");
+  const [isCheched, setChecked] = useState(false);
   return (
     <FormControl component="fieldset">
       <h3>Qual é meu desenho Preferido ??</h3>
@@ -23,6 +24,8 @@ function Etapa10({ aoEnviar }) {
                 setResposta(event.target.value);
                 resposta = event.target.value
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -37,6 +40,8 @@ function Etapa10({ aoEnviar }) {
                 setResposta(event.target.value);
                 resposta = event.target.value
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -51,6 +56,8 @@ function Etapa10({ aoEnviar }) {
                 setResposta(event.target.value);
                 resposta = event.target.value
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -65,6 +72,8 @@ function Etapa10({ aoEnviar }) {
                 setResposta(event.target.value);
                 resposta = event.target.value
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
@@ -79,6 +88,8 @@ function Etapa10({ aoEnviar }) {
                 setResposta(event.target.value);
                 resposta = event.target.value
                 aoEnviar(parseInt(resposta));
+                setChecked(false);
+                verificar(isCheched);
               }}
             />
           }
