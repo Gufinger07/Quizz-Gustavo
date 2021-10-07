@@ -67,7 +67,7 @@ function Inicio() {
           <div className="finalizacao">
             <h1>
               {" "}
-              Parabéns, você acertou {contadorRespostas - 1} perguntas XD !!
+              Parabéns, você acertou {contadorRespostas - 1}/ 10 perguntas XD !!
             </h1>
             <Button
               onClick={() => {
@@ -83,6 +83,7 @@ function Inicio() {
           </div>
         )}
       </div>
+      
     </Container>
   );
 }
