@@ -13,7 +13,6 @@ import Etapa8 from "./Etapa8";
 import Etapa9 from "./Etapa9";
 import Etapa10 from "./Etapa10";
 
-
 function Inicio() {
   const [etapaAtual, setEtapaAtual] = useState(0);
 
@@ -38,7 +37,6 @@ function Inicio() {
     setDados(resposta);
   }
 
-
   const respostas = [0, 3, 2, 1, 5, 2, 1, 1, 1, 2, 3];
 
   return (
@@ -56,7 +54,6 @@ function Inicio() {
               }
               if (dadosColetados === respostas[etapaAtual]) {
                 setContador(contadorRespostas + 1);
-                console.log(contadorRespostas)
               }
             }}
             variant="outlined"
@@ -68,11 +65,14 @@ function Inicio() {
         )}
         {etapaAtual === 11 && (
           <div className="finalizacao">
-            <h1> Parabéns, você acertou {contadorRespostas - 1} perguntas XD !!</h1>
+            <h1>
+              {" "}
+              Parabéns, você acertou {contadorRespostas - 1} perguntas XD !!
+            </h1>
             <Button
               onClick={() => {
                 setEtapaAtual(0);
-                setContador(1)
+                setContador(1);
               }}
               variant="outlined"
               color="secondary"

@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 
 function Etapa10({ aoEnviar }) {
-  const [resposta, setResposta] = useState("");
+  var [resposta, setResposta] = useState("");
   return (
     <FormControl component="fieldset">
       <h3>Qual é meu desenho Preferido ??</h3>
@@ -21,7 +21,8 @@ function Etapa10({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }
@@ -34,7 +35,8 @@ function Etapa10({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }
@@ -47,7 +49,8 @@ function Etapa10({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }
@@ -60,7 +63,8 @@ function Etapa10({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }
@@ -73,7 +77,8 @@ function Etapa10({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }

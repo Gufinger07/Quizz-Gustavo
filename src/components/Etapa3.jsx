@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 
 function Etapa3({ aoEnviar }) {
-  const [resposta, setResposta] = useState("");
+  var [resposta, setResposta] = useState("");
   return (
     <FormControl component="fieldset" >
       <h3>Qual é a minha comida preferida ??</h3>
@@ -22,7 +22,8 @@ function Etapa3({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }
@@ -35,7 +36,8 @@ function Etapa3({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }
@@ -48,7 +50,8 @@ function Etapa3({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }
@@ -61,7 +64,8 @@ function Etapa3({ aoEnviar }) {
               color="secondary"
               onClick={(event) => {
                 setResposta(event.target.value);
-                aoEnviar(event.target.value);
+                resposta = event.target.value
+                aoEnviar(parseInt(resposta));
               }}
             />
           }

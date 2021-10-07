@@ -10,7 +10,7 @@
 
 .container{
     background-color: rgb(255, 255, 255);
-    width: 600px;
+    width: 400px;
     border-radius: 1rem;
 }
 .finalizacao {
@@ -20,3 +20,4 @@
     flex-direction: column;
     
 }
+
