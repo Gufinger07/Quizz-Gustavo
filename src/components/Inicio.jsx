@@ -13,26 +13,28 @@ import Etapa8 from "./Etapa8";
 import Etapa9 from "./Etapa9";
 import Etapa10 from "./Etapa10";
 
+import { SentimentSatisfiedAlt, SentimentDissatisfied } from "@material-ui/icons";
+
 function Inicio() {
   const [etapaAtual, setEtapaAtual] = useState(0);
 
   const [dadosColetados, setDados] = useState(0);
 
-  const [booleanColetado, setBoolean] = useState(true)
+  const [booleanColetado, setBoolean] = useState(true);
 
   const [contadorRespostas, setContador] = useState(0);
   const etapas = [
     <Inicial />,
-    <Etapa1 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa2 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa3 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa4 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa5 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa6 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa7 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa8 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa9 aoEnviar={coletar}  verificar={verifica}/>,
-    <Etapa10 aoEnviar={coletar} verificar={verifica}/>,
+    <Etapa1 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa2 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa3 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa4 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa5 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa6 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa7 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa8 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa9 aoEnviar={coletar} verificar={verifica} />,
+    <Etapa10 aoEnviar={coletar} verificar={verifica} />,
   ];
 
   function coletar(resposta) {
@@ -40,37 +42,39 @@ function Inicio() {
   }
 
   function verifica(boolean) {
-    setBoolean(boolean)
+    setBoolean(boolean);
   }
 
   const respostas = [0, 3, 2, 1, 5, 2, 1, 1, 1, 2, 3];
 
-  
   return (
-    <Container fixed className="container" maxWidth="sm">
+    <Container fixed className="container" maxWidth="false">
       {etapas[etapaAtual]}
       <div className="grupo-botoes">
         {etapaAtual < 11 && (
           <Button
             onClick={() => {
-              if (etapaAtual > 0 && etapaAtual < 11 && booleanColetado === !true) {
+              if (
+                etapaAtual > 0 &&
+                etapaAtual < 11 &&
+                booleanColetado === !true
+              ) {
                 setEtapaAtual(etapaAtual + 1);
-                setBoolean(true)
-                
+                setBoolean(true);
               }
-              if (etapaAtual > 0 && etapaAtual < 11 && booleanColetado === !true && dadosColetados === respostas[etapaAtual]) {
+              if (
+                etapaAtual > 0 &&
+                etapaAtual < 11 &&
+                booleanColetado === !true &&
+                dadosColetados === respostas[etapaAtual]
+              ) {
                 setEtapaAtual(etapaAtual + 1);
-                setBoolean(true)
+                setBoolean(true);
                 setContador(contadorRespostas + 1);
-                
-              
               }
               if (etapaAtual === 0) {
                 setEtapaAtual(etapaAtual + 1);
               }
-              
-                
-              
             }}
             variant="outlined"
             color="secondary"
@@ -81,9 +85,20 @@ function Inicio() {
         )}
         {etapaAtual === 11 && (
           <div className="finalizacao">
-            <h1>
+            <h1 className="finalizacao-titulo">
               {" "}
-              Parabéns, você acertou {contadorRespostas} / 10 perguntas XD !!
+              Parabéns !! 
+            </h1>
+            {contadorRespostas >=6 &&(
+              <SentimentSatisfiedAlt fontSize="large" color="secondary"/>
+            )}
+            {contadorRespostas <=5 &&(
+              <SentimentDissatisfied fontSize="large" color="secondary"/>
+            )}
+            
+            <h1 className="finalizacao-titulo">
+               {" "}
+              Você acertou {contadorRespostas} / 10 perguntas XD !!
             </h1>
             <Button
               onClick={() => {
@@ -99,7 +114,6 @@ function Inicio() {
           </div>
         )}
       </div>
-
     </Container>
   );
 }

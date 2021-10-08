@@ -1,5 +1,5 @@
 .grupo-botoes {
-    width: 550px;
+    width: 300px;
     margin-top: 2rem;
     margin-bottom: 1rem;
     display: flex;
@@ -10,7 +10,7 @@
 
 .container{
     background-color: rgb(255, 255, 255);
-    width: 400px;
+    width: 300px !important;
     border-radius: 1rem;
 }
 .finalizacao {
@@ -19,5 +19,18 @@
     align-items: center;
     flex-direction: column;
     
+}
+
+.finalizacao-titulo {
+    font-size: 1.3rem;
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        width: 600px !important;  
+    }
+    .grupo-botoes {
+        width: 550px;
+    }
 }
 

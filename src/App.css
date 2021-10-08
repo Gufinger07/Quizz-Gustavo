@@ -18,5 +18,10 @@ body {
 
 .titulo {
     color: white;
+    font-size: 1.3rem;
 }
-
+@media screen and (min-width: 700px) {
+    .titulo {
+        font-size: 2rem;
+    }
+}
