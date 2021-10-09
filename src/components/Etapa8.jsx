@@ -12,7 +12,7 @@ function Etapa8({ aoEnviar, verificar }) {
   const [isCheched, setChecked] = useState(false);
   return (
     <FormControl component="fieldset">
-      <h3>Qual Bebida não pode faltar no meu dia ??</h3>
+      <h3>8) Qual Bebida não pode faltar no meu dia ??</h3>
 
       <RadioGroup aria-label="gender" name="radio-buttons-group">
         <FormControlLabel

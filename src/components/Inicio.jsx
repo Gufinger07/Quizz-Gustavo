@@ -13,7 +13,10 @@ import Etapa8 from "./Etapa8";
 import Etapa9 from "./Etapa9";
 import Etapa10 from "./Etapa10";
 
-import { SentimentSatisfiedAlt, SentimentDissatisfied } from "@material-ui/icons";
+import {
+  SentimentSatisfiedAlt,
+  SentimentDissatisfied,
+} from "@material-ui/icons";
 
 function Inicio() {
   const [etapaAtual, setEtapaAtual] = useState(0);
@@ -85,20 +88,22 @@ function Inicio() {
         )}
         {etapaAtual === 11 && (
           <div className="finalizacao">
+            {contadorRespostas >= 6 && (
+              <>
+                <h1 className="finalizacao-titulo">Parabéns !!</h1>
+                <SentimentSatisfiedAlt fontSize="large" color="secondary" />
+              </>
+            )}
+            {contadorRespostas <= 5 && (
+              <>
+                <h1 className="finalizacao-titulo">Estou Decepcionado </h1>
+                <SentimentDissatisfied fontSize="large" color="secondary" />
+              </>
+            )}
+
             <h1 className="finalizacao-titulo">
               {" "}
-              Parabéns !! 
-            </h1>
-            {contadorRespostas >=6 &&(
-              <SentimentSatisfiedAlt fontSize="large" color="secondary"/>
-            )}
-            {contadorRespostas <=5 &&(
-              <SentimentDissatisfied fontSize="large" color="secondary"/>
-            )}
-            
-            <h1 className="finalizacao-titulo">
-               {" "}
-              Você acertou {contadorRespostas} / 10 perguntas XD !!
+              Você acertou {contadorRespostas} / 10 perguntas 
             </h1>
             <Button
               onClick={() => {

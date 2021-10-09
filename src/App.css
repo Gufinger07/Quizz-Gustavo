@@ -13,7 +13,7 @@ body {
 .container-titulo {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: relative
 }
 
 .titulo {

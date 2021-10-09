@@ -12,7 +12,7 @@ function Etapa4({ aoEnviar, verificar }) {
   const [isCheched, setChecked] = useState(false);
   return (
     <FormControl component="fieldset">
-      <h3>Qual doce eu não Gosto ??</h3>
+      <h3>4) Qual comida eu não Gosto ??</h3>
 
       <RadioGroup aria-label="gender" name="radio-buttons-group">
         <FormControlLabel
@@ -77,7 +77,7 @@ function Etapa4({ aoEnviar, verificar }) {
               }}
             />
           }
-          label="Algodão Doce"
+          label="Waffle"
         />
         <FormControlLabel
           value="5"

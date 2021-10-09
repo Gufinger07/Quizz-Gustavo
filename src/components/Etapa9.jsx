@@ -12,7 +12,7 @@ function Etapa9({ aoEnviar, verificar }) {
   const [isCheched, setChecked] = useState(false);
   return (
     <FormControl component="fieldset">
-      <h3>Qual é o meu personagem Preferido ??</h3>
+      <h3>9) Qual é o meu personagem Preferido ??</h3>
 
       <RadioGroup aria-label="gender" name="radio-buttons-group">
         <FormControlLabel

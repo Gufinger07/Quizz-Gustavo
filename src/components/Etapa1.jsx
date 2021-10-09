@@ -14,7 +14,8 @@ function Etapa1({ aoEnviar, verificar }) {
 
   return (
     <FormControl component="fieldset">
-      <h3>Qual é a minha Série Favorita ??</h3>
+      <h3>1) Qual é a minha Série Favorita ??</h3>
+      
 
       <RadioGroup aria-label="gender" name="radio-buttons-group">
         <FormControlLabel
