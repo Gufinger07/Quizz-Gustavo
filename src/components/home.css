@@ -1,36 +1,68 @@
 .grupo-botoes {
-    width: 250px;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 250px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.container{
-    background-color: rgb(255, 255, 255);
-    width: 300px !important;
-    border-radius: 1rem;
+.container {
+  background-color: rgb(255, 255, 255);
+  width: 300px !important;
+  border-radius: 1rem;
 }
 .finalizacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .finalizacao-titulo {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
+.form {
+  color: white;
+  background-color: white;
+  margin-bottom: 4rem !important;
+  position: relative;
+}
+
+td {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  width: 100px;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+tr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tabela {
+  margin-top: 3rem;
+  color: white;
+}
+.linha{
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (min-width: 700px) {
-    .container {
-        width: 600px !important;  
-    }
-    .grupo-botoes {
-        width: 550px;
-    }
+  .container {
+    width: 600px !important;
+  }
+  .grupo-botoes {
+    width: 550px;
+  }
 }
-

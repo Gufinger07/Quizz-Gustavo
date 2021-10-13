@@ -30,7 +30,7 @@ function Etapa1({ aoEnviar, verificar }) {
 
                 setChecked(false);
                 verificar(isCheched);
-                console.log(isCheched)
+                
               }}
             />
           }
@@ -47,7 +47,7 @@ function Etapa1({ aoEnviar, verificar }) {
                 aoEnviar(parseInt(resposta));
                 setChecked(false);
                 verificar(isCheched);
-                console.log(isCheched)
+                
               }}
             />
           }
@@ -64,7 +64,7 @@ function Etapa1({ aoEnviar, verificar }) {
                 aoEnviar(parseInt(resposta));
                 setChecked(false);
                 verificar(isCheched);
-                console.log(isCheched)
+                
               }}
             />
           }
@@ -81,7 +81,7 @@ function Etapa1({ aoEnviar, verificar }) {
                 aoEnviar(parseInt(resposta));
                 setChecked(false);
                 verificar(isCheched);
-                console.log(isCheched)
+                
               }}
             />
           }
@@ -98,7 +98,7 @@ function Etapa1({ aoEnviar, verificar }) {
                 aoEnviar(parseInt(resposta));
                 setChecked(false);
                 verificar(isCheched);
-                console.log(isCheched)
+                
               }}
             />
           }
