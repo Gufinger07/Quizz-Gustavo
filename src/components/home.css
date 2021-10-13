@@ -36,7 +36,8 @@ td {
   border-image-slice: 1;
   border-width: 1px;
   width: 100px;
-  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  border-color: #d53a9d;
+  border-radius: 2px;
 }
 tr {
   display: flex;
